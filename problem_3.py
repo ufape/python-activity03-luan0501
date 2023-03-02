@@ -65,8 +65,42 @@ Percentual de salmão: 25.00%
 """
 
 
-def main():
-    pass  # your code here
+def main(): 
+    n = int(input("Quantas amostras: "))
+    total = 0
+    cenoura = 0
+    rabanete = 0
+    salmão = 0
+
+    if n <= 1 and n >= 15:
+        print("error")
+
+    else:
+
+        for i in range(n):
+            tipo = input("Tipo: ")
+            quantidade = int(input("Quantidade: "))
+            total += quantidade
+
+            if tipo == 'S':
+                salmão += quantidade
+            elif tipo == 'R':
+                rabanete += quantidade
+            elif tipo == 'C':
+                cenoura += quantidade
+
+        print("Total: {} amostras.".format(total))
+        print("Total de cenouras: {}.".format(cenoura))
+        print("Total de rabanetes: {}.".format(rabanete))
+        print("Total de salmões: {}.".format(salmão))
+
+        percent_cenoura = (cenoura / total) * 100
+        percent_rabanete = (rabanete / total) * 100
+        percent_salmão = (salmão / total) * 100
+
+        print("Percentual de cenouras: {:.2f}%".format(percent_cenoura))
+        print("Percentual de rabanetes: {:.2f}%".format(percent_rabanete))
+        print("Percentual de salmões: {:.2f}%".format(percent_salmão))
 
 
 if __name__ == '__main__':
